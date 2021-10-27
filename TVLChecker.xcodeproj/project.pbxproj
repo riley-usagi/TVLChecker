@@ -14,6 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BFD946662729A90600D3E6B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFE0E1112727CB77009FC108 /* TVLChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVLChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVLCheckerApp.swift; sourceTree = "<group>"; };
 		BFE0E1162727CB77009FC108 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +33,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFD946652729A8F600D3E6B3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BFD946662729A90600D3E6B3 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BFE0E1082727CB76009FC108 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +60,7 @@
 		BFE0E1132727CB77009FC108 /* TVLChecker */ = {
 			isa = PBXGroup;
 			children = (
+				BFD946652729A8F600D3E6B3 /* Resources */,
 				BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */,
 				BFE0E1162727CB77009FC108 /* ContentView.swift */,
 				BFE0E1182727CB78009FC108 /* Assets.xcassets */,
@@ -77,6 +87,7 @@
 				BFE0E10D2727CB77009FC108 /* Sources */,
 				BFE0E10E2727CB77009FC108 /* Frameworks */,
 				BFE0E10F2727CB77009FC108 /* Resources */,
+				BFD946642729A87500D3E6B3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -131,6 +142,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BFD946642729A87500D3E6B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BFE0E10D2727CB77009FC108 /* Sources */ = {
@@ -272,6 +303,7 @@
 				DEVELOPMENT_TEAM = 683CXDNH79;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TVLChecker/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -303,6 +335,7 @@
 				DEVELOPMENT_TEAM = 683CXDNH79;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TVLChecker/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
