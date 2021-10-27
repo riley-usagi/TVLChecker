@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF123A842729CDE400E598BE /* IndicatorItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF123A832729CDE400E598BE /* IndicatorItemView.swift */; };
+		BFD9466B2729AC8700D3E6B3 /* IndicatorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD9466A2729AC8700D3E6B3 /* IndicatorsScreen.swift */; };
 		BFE0E1152727CB77009FC108 /* TVLCheckerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */; };
 		BFE0E1172727CB77009FC108 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0E1162727CB77009FC108 /* ContentView.swift */; };
 		BFE0E1192727CB78009FC108 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFE0E1182727CB78009FC108 /* Assets.xcassets */; };
@@ -14,7 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF123A832729CDE400E598BE /* IndicatorItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorItemView.swift; sourceTree = "<group>"; };
 		BFD946662729A90600D3E6B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFD9466A2729AC8700D3E6B3 /* IndicatorsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsScreen.swift; sourceTree = "<group>"; };
 		BFE0E1112727CB77009FC108 /* TVLChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVLChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVLCheckerApp.swift; sourceTree = "<group>"; };
 		BFE0E1162727CB77009FC108 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,12 +37,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF123A822729CDD400E598BE /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				BF123A832729CDE400E598BE /* IndicatorItemView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		BFD946652729A8F600D3E6B3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				BFD946662729A90600D3E6B3 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BFD946682729AC3A00D3E6B3 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BFD946692729AC6900D3E6B3 /* Indicators */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BFD946692729AC6900D3E6B3 /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				BF123A822729CDD400E598BE /* Component */,
+				BFD9466A2729AC8700D3E6B3 /* IndicatorsScreen.swift */,
+			);
+			path = Indicators;
 			sourceTree = "<group>";
 		};
 		BFE0E1082727CB76009FC108 = {
@@ -60,6 +89,7 @@
 		BFE0E1132727CB77009FC108 /* TVLChecker */ = {
 			isa = PBXGroup;
 			children = (
+				BFD946682729AC3A00D3E6B3 /* Screens */,
 				BFD946652729A8F600D3E6B3 /* Resources */,
 				BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */,
 				BFE0E1162727CB77009FC108 /* ContentView.swift */,
@@ -168,6 +198,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD9466B2729AC8700D3E6B3 /* IndicatorsScreen.swift in Sources */,
+				BF123A842729CDE400E598BE /* IndicatorItemView.swift in Sources */,
 				BFE0E1172727CB77009FC108 /* ContentView.swift in Sources */,
 				BFE0E1152727CB77009FC108 /* TVLCheckerApp.swift in Sources */,
 			);
