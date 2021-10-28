@@ -4,6 +4,10 @@ struct IndicatorsScreen: View {
   
   @Environment(\.colorScheme) var colorScheme
   
+  @Environment(\.container) private var container: Container
+  
+  @State private var indicatorsList: Loadable<[String]>
+  
   @State private var searchQuery: String = ""
   
   @State private var offset: CGFloat          = 0
@@ -15,8 +19,64 @@ struct IndicatorsScreen: View {
     ["name": "Нефтепродукты", "detail": "Питьевая воды"]
   ]
   
+  init(indicatorsList: Loadable<[String]> = .notRequested) {
+    self._indicatorsList = .init(initialValue: indicatorsList)
+  }
+  
   var body: some View {
+    content
+  }
+  
+  private func getOffset() -> CGSize {
     
+    let screenWidth = UIScreen.main.bounds.width / 2
+    
+    var size: CGSize = .zero
+    
+    size.width  = offset > 0 ? (offset * 1.5 <= (screenWidth - titleOffset) ? offset * 1.5 : (screenWidth - titleOffset)) : 0
+    size.height = offset > 0 ? (offset <= 75 ? -offset : -75) : 0
+    
+    return size
+  }
+  
+  private func getScale() -> CGFloat {
+    if offset > 0 {
+      let screenWidth = UIScreen.main.bounds.width
+      
+      let progress = 1 - (getOffset().width / screenWidth)
+      
+      return progress >= 0.7 ? progress: 0.7
+    } else {
+      return 1
+    }
+  }
+  
+  var content: some View {
+    switch indicatorsList {
+      
+    case .notRequested:
+      return AnyView(notRequestedView)
+    case .isLoading:
+      return AnyView(ActivityIndicatorView())
+    case let .loaded(indicators):
+      return AnyView(loadedView(indicators))
+    case .failed:
+      return AnyView(Text("Failed"))
+    }
+  }
+}
+
+private extension IndicatorsScreen {
+  var notRequestedView: some View {
+    Text("")
+      .onAppear {
+        container.interactors.indicatorsInteractor.loadIndicatorsList($indicatorsList, searchText: searchQuery)
+      }
+  }
+}
+
+private extension IndicatorsScreen {
+  func loadedView(_ indicators: [String]) -> some View {
     ZStack(alignment: .top) {
       
       VStack {
@@ -173,30 +233,6 @@ struct IndicatorsScreen: View {
           }
         )
       }
-    }
-  }
-  
-  private func getOffset() -> CGSize {
-    
-    let screenWidth = UIScreen.main.bounds.width / 2
-    
-    var size: CGSize = .zero
-    
-    size.width  = offset > 0 ? (offset * 1.5 <= (screenWidth - titleOffset) ? offset * 1.5 : (screenWidth - titleOffset)) : 0
-    size.height = offset > 0 ? (offset <= 75 ? -offset : -75) : 0
-    
-    return size
-  }
-  
-  private func getScale() -> CGFloat {
-    if offset > 0 {
-      let screenWidth = UIScreen.main.bounds.width
-      
-      let progress = 1 - (getOffset().width / screenWidth)
-      
-      return progress >= 0.7 ? progress: 0.7
-    } else {
-      return 1
     }
   }
 }

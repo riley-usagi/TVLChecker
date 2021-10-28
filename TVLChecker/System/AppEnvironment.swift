@@ -1,0 +1,26 @@
+/// Окружение приложения
+struct AppEnvironment {
+  let container: Container
+}
+
+extension AppEnvironment {
+  
+  // MARK: - Bootstrap
+  
+  /// Основной метод первоначальной настройки всего и вся
+  /// - Returns: Объект окружения
+  static func bootstrap() -> AppEnvironment {
+    
+    let appState        = Store<AppState>(AppState())
+    
+    let dbServices = configuredDBServices()
+    
+    let interactors = configuredInteractors(
+      appState: appState, dbServices: dbServices
+    )
+    
+    let container = Container(appState: appState, interactors: interactors)
+    
+    return AppEnvironment(container: container)
+  }
+}
