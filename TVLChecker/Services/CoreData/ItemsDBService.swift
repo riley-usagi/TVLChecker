@@ -47,7 +47,7 @@ struct RealItemsDBService: ItemsDBService {
   }
   
   func items(query: String) -> AnyPublisher<LazyList<Item>, Error> {
-    let fetchRequest = ItemModelObject.itemsList(by: query)
+    let fetchRequest = ItemModelObject.itemsList(searchText: query)
     
     return persistentStore
       .fetch(fetchRequest) {

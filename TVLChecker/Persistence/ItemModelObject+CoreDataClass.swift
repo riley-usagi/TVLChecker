@@ -35,17 +35,4 @@ extension ItemModelObject {
     
     return request
   }
-  
-  static func itemsList(by indicator: String) -> NSFetchRequest<ItemModelObject> {
-    let request = newFetchRequest()
-    
-    let predicate = NSPredicate(format: "indicator == %@", indicator)
-    
-    request.predicate = predicate
-    
-    request.sortDescriptors = [NSSortDescriptor(key: "indicator", ascending: true)]
-    request.fetchBatchSize = 10
-    
-    return request
-  }
 }
