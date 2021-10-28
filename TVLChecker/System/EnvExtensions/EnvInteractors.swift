@@ -10,12 +10,10 @@ extension AppEnvironment {
     _ fbServices: Container.FBServices
   ) -> Container.Interactors {
     
-    let indicatorsInteractor = RealIndicatorsInteractor(
-      dbService: dbServices.indicatorsDBService,
-      fbService: fbServices.itemsFBService
+    let itemsInteractor = RealItemsInteractor(
+      dbServices.itemsDBService, fbServices.itemsFBService
     )
     
-    
-    return .init(indicatorsInteractor)
+    return .init(itemsInteractor)
   }
 }

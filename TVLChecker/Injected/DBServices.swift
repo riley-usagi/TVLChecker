@@ -4,10 +4,10 @@ extension Container {
   
   struct DBServices {
     
-    let indicatorsDBService: IndicatorsDBService
+    let itemsDBService: ItemsDBService
     
-    init(_ indicatorsDBService: IndicatorsDBService) {
-      self.indicatorsDBService = indicatorsDBService
+    init(_ itemsDBService: ItemsDBService) {
+      self.itemsDBService = itemsDBService
     }
   }
 }

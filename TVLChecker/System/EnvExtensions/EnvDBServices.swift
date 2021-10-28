@@ -7,9 +7,8 @@ extension AppEnvironment {
     
     let persistentStore = CoreDataStack()
     
-    let indicatorsDBService = RealIndicatorsDBService(persistentStore)
+    let itemsDBService = RealItemsDBService(persistentStore)
     
-//    return .init(itemsDBRepository: itemsDBRepository)
-    return .init(indicatorsDBService)
+    return .init(itemsDBService)
   }
 }

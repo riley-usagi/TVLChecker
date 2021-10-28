@@ -39,7 +39,6 @@
 		BF99B55A272A8A8E00242D60 /* LazyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B559272A8A8E00242D60 /* LazyList.swift */; };
 		BF99B55D272A8AD900242D60 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B55C272A8AD900242D60 /* APIError.swift */; };
 		BF99B560272A8BCA00242D60 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B55F272A8BCA00242D60 /* AppEnvironment.swift */; };
-		BF99B563272A8C1B00242D60 /* IndicatorsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B562272A8C1B00242D60 /* IndicatorsInteractor.swift */; };
 		BF99B565272A8CBF00242D60 /* EnvInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B564272A8CBF00242D60 /* EnvInteractors.swift */; };
 		BF99B56B272A926900242D60 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B56A272A926900242D60 /* ActivityIndicatorView.swift */; };
 		BF99B56D272A939F00242D60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF99B56C272A939F00242D60 /* GoogleService-Info.plist */; };
@@ -47,13 +46,15 @@
 		BF99B574272A9A8000242D60 /* TVLCheckerDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF99B572272A9A8000242D60 /* TVLCheckerDataBase.xcdatamodeld */; };
 		BF99B577272A9C0100242D60 /* ItemModelObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B575272A9C0100242D60 /* ItemModelObject+CoreDataClass.swift */; };
 		BF99B578272A9C0100242D60 /* ItemModelObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B576272A9C0100242D60 /* ItemModelObject+CoreDataProperties.swift */; };
-		BF99B57B272A9F6700242D60 /* IndicatorsDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B57A272A9F6700242D60 /* IndicatorsDBService.swift */; };
 		BF99B57E272AA02700242D60 /* EnvDBServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B57D272AA02700242D60 /* EnvDBServices.swift */; };
 		BF99B580272AA08C00242D60 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B57F272AA08C00242D60 /* CoreDataStack.swift */; };
 		BF99B584272AA13400242D60 /* DBServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B583272AA13400242D60 /* DBServices.swift */; };
 		BF99B587272AA65600242D60 /* ItemsFBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B586272AA65600242D60 /* ItemsFBService.swift */; };
 		BF99B589272AA6BF00242D60 /* EnvFBServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B588272AA6BF00242D60 /* EnvFBServices.swift */; };
 		BF99B58B272AAF3E00242D60 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B58A272AAF3E00242D60 /* ArrayExtension.swift */; };
+		BF99B58D272AE03300242D60 /* ItemsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B58C272AE03300242D60 /* ItemsInteractor.swift */; };
+		BF99B590272AE0BB00242D60 /* ItemsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B58F272AE0BB00242D60 /* ItemsScreen.swift */; };
+		BF99B592272AE34900242D60 /* ItemsDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B591272AE34900242D60 /* ItemsDBService.swift */; };
 		BFD9466B2729AC8700D3E6B3 /* IndicatorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD9466A2729AC8700D3E6B3 /* IndicatorsScreen.swift */; };
 		BFE0E1152727CB77009FC108 /* TVLCheckerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */; };
 		BFE0E1172727CB77009FC108 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0E1162727CB77009FC108 /* ContentView.swift */; };
@@ -94,7 +95,6 @@
 		BF99B559272A8A8E00242D60 /* LazyList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyList.swift; sourceTree = "<group>"; };
 		BF99B55C272A8AD900242D60 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		BF99B55F272A8BCA00242D60 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
-		BF99B562272A8C1B00242D60 /* IndicatorsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsInteractor.swift; sourceTree = "<group>"; };
 		BF99B564272A8CBF00242D60 /* EnvInteractors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvInteractors.swift; sourceTree = "<group>"; };
 		BF99B56A272A926900242D60 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		BF99B56C272A939F00242D60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -102,13 +102,15 @@
 		BF99B573272A9A8000242D60 /* TVLCheckerDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVLCheckerDataBase.xcdatamodel; sourceTree = "<group>"; };
 		BF99B575272A9C0100242D60 /* ItemModelObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemModelObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BF99B576272A9C0100242D60 /* ItemModelObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemModelObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BF99B57A272A9F6700242D60 /* IndicatorsDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsDBService.swift; sourceTree = "<group>"; };
 		BF99B57D272AA02700242D60 /* EnvDBServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvDBServices.swift; sourceTree = "<group>"; };
 		BF99B57F272AA08C00242D60 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		BF99B583272AA13400242D60 /* DBServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBServices.swift; sourceTree = "<group>"; };
 		BF99B586272AA65600242D60 /* ItemsFBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsFBService.swift; sourceTree = "<group>"; };
 		BF99B588272AA6BF00242D60 /* EnvFBServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvFBServices.swift; sourceTree = "<group>"; };
 		BF99B58A272AAF3E00242D60 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		BF99B58C272AE03300242D60 /* ItemsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInteractor.swift; sourceTree = "<group>"; };
+		BF99B58F272AE0BB00242D60 /* ItemsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScreen.swift; sourceTree = "<group>"; };
+		BF99B591272AE34900242D60 /* ItemsDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDBService.swift; sourceTree = "<group>"; };
 		BFD9466A2729AC8700D3E6B3 /* IndicatorsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsScreen.swift; sourceTree = "<group>"; };
 		BFE0E1112727CB77009FC108 /* TVLChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVLChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVLCheckerApp.swift; sourceTree = "<group>"; };
@@ -177,8 +179,8 @@
 				BF99B540272A896F00242D60 /* AppState.swift */,
 				BF99B53E272A896F00242D60 /* Container.swift */,
 				BF99B583272AA13400242D60 /* DBServices.swift */,
-				BF99B53F272A896F00242D60 /* Interactors.swift */,
 				BF99B53D272A896F00242D60 /* FBServices.swift */,
+				BF99B53F272A896F00242D60 /* Interactors.swift */,
 			);
 			path = Injected;
 			sourceTree = "<group>";
@@ -245,7 +247,7 @@
 		BF99B561272A8C0100242D60 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				BF99B562272A8C1B00242D60 /* IndicatorsInteractor.swift */,
+				BF99B58C272AE03300242D60 /* ItemsInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -289,7 +291,7 @@
 		BF99B57C272A9FDF00242D60 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				BF99B57A272A9F6700242D60 /* IndicatorsDBService.swift */,
+				BF99B591272AE34900242D60 /* ItemsDBService.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -302,9 +304,18 @@
 			path = FireBase;
 			sourceTree = "<group>";
 		};
+		BF99B58E272AE0AF00242D60 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				BF99B58F272AE0BB00242D60 /* ItemsScreen.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		BFD946682729AC3A00D3E6B3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BF99B58E272AE0AF00242D60 /* Items */,
 				BF99B569272A925600242D60 /* Other */,
 				BFE0E1162727CB77009FC108 /* ContentView.swift */,
 				BFD946692729AC6900D3E6B3 /* Indicators */,
@@ -469,6 +480,7 @@
 				BF99B539272A893C00242D60 /* JustExtension.swift in Sources */,
 				BF99B54E272A8A6600242D60 /* Store.swift in Sources */,
 				BF99B52E272A893C00242D60 /* ViewExtension.swift in Sources */,
+				BF99B58D272AE03300242D60 /* ItemsInteractor.swift in Sources */,
 				BF99B574272A9A8000242D60 /* TVLCheckerDataBase.xcdatamodeld in Sources */,
 				BF99B536272A893C00242D60 /* UINavigationControllerExtension.swift in Sources */,
 				BF99B532272A893C00242D60 /* OptionalExtension.swift in Sources */,
@@ -477,7 +489,6 @@
 				BFD9466B2729AC8700D3E6B3 /* IndicatorsScreen.swift in Sources */,
 				BF99B578272A9C0100242D60 /* ItemModelObject+CoreDataProperties.swift in Sources */,
 				BF99B52A272A893C00242D60 /* HTTPCodesExtension.swift in Sources */,
-				BF99B57B272A9F6700242D60 /* IndicatorsDBService.swift in Sources */,
 				BF99B570272A9A1E00242D60 /* Item.swift in Sources */,
 				BF99B537272A893C00242D60 /* NSManagedObjectContextExtension.swift in Sources */,
 				BF99B58B272AAF3E00242D60 /* ArrayExtension.swift in Sources */,
@@ -489,6 +500,7 @@
 				BF99B543272A896F00242D60 /* Container.swift in Sources */,
 				BF99B534272A893C00242D60 /* ProcessInfoExtension.swift in Sources */,
 				BFE0E1172727CB77009FC108 /* ContentView.swift in Sources */,
+				BF99B592272AE34900242D60 /* ItemsDBService.swift in Sources */,
 				BF99B551272A8A6600242D60 /* WebService.swift in Sources */,
 				BF99B56B272A926900242D60 /* ActivityIndicatorView.swift in Sources */,
 				BF99B584272AA13400242D60 /* DBServices.swift in Sources */,
@@ -509,7 +521,7 @@
 				BF99B535272A893C00242D60 /* PublisherExtension.swift in Sources */,
 				BF99B54F272A8A6600242D60 /* APICall.swift in Sources */,
 				BF99B52C272A893C00242D60 /* JsonEncoderExtension.swift in Sources */,
-				BF99B563272A8C1B00242D60 /* IndicatorsInteractor.swift in Sources */,
+				BF99B590272AE0BB00242D60 /* ItemsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

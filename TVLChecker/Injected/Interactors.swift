@@ -3,19 +3,19 @@ extension Container {
   /// Список интеракторов
   struct Interactors {
     
-    let indicatorsInteractor: IndicatorsInteractor
+    let itemsInteractor: ItemsInteractor
     
     /// Заглушка
     static var stub: Self {
       .init(
-        StubIndicatorsInteractor()
+        StubItemsInteractor()
       )
     }
     
     init(
-      _ indicatorsInteractor: IndicatorsInteractor
+      _ itemsInteractor: ItemsInteractor
     ) {
-      self.indicatorsInteractor = indicatorsInteractor
+      self.itemsInteractor = itemsInteractor
     }
   }
 }
