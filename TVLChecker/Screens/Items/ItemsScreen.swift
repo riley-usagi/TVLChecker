@@ -1,8 +1,12 @@
 import SwiftUI
 
-struct IndicatorsScreen: View {
+struct ItemsScreen: View {
   
   @Environment(\.colorScheme) var colorScheme
+  
+  @Environment(\.container) private var container: Container
+  
+  @State private var items: Loadable<LazyList<Item>>
   
   @State private var searchQuery: String = ""
   
@@ -11,12 +15,53 @@ struct IndicatorsScreen: View {
   @State private var titleOffset: CGFloat     = 0
   @State private var titleBarHeight: CGFloat  = 0
   
-  var items: [[String: String]] = [
-    ["name": "Нефтепродукты", "detail": "Питьевая воды"]
-  ]
+  @FocusState private var searchFieldIsFocused: Bool
+  
+  init(items: Loadable<LazyList<Item>> = .notRequested) {
+    self._items = .init(initialValue: items)
+  }
   
   var body: some View {
-    
+    content
+  }
+}
+
+
+// MARK: - Content
+
+extension ItemsScreen {
+  var content: some View {
+    switch items {
+      
+    case .notRequested:
+      return AnyView(notRequestedView)
+    case .isLoading:
+      return AnyView(ActivityIndicatorView())
+    case let .loaded(items):
+      return AnyView(loadedView(items))
+    case .failed:
+      return AnyView(Text("Failed"))
+    }
+  }
+}
+
+
+// MARK: - Not Requested view
+
+private extension ItemsScreen {
+  var notRequestedView: some View {
+    Text("")
+      .onAppear {
+        container.interactors.itemsInteractor.loadItems($items, searchQuery)
+      }
+  }
+}
+
+
+// MARK: - Loaded view
+
+private extension ItemsScreen {
+  func loadedView(_ items: LazyList<Item>) -> some View {
     ZStack(alignment: .top) {
       
       VStack {
@@ -84,6 +129,10 @@ struct IndicatorsScreen: View {
               .foregroundColor(.gray)
             
             TextField("Поиск", text: $searchQuery)
+              .focused($searchFieldIsFocused)
+              .onChange(of: searchQuery) { newValue in
+                container.interactors.itemsInteractor.loadItems($items, newValue)
+              }
           }
           .padding(.vertical, 10)
           .padding(.horizontal)
@@ -125,6 +174,9 @@ struct IndicatorsScreen: View {
             endPoint: .bottom
           )
         }.ignoresSafeArea()
+          .onTapGesture {
+            searchFieldIsFocused = false
+          }
         
       )
       .overlay(
@@ -141,6 +193,8 @@ struct IndicatorsScreen: View {
           
           return .clear
         }
+        
+        
       )
       .animation(.easeInOut, value: searchQuery != "")
       
@@ -148,8 +202,8 @@ struct IndicatorsScreen: View {
         
         VStack(spacing: 15) {
           
-          ForEach(items, id: \.self) { item in
-            IndicatorItemView(item: item)
+          ForEach(items) { item in
+            ItemsListView(item)
           }
         }
         .padding(.top, 10)
@@ -175,7 +229,13 @@ struct IndicatorsScreen: View {
       }
     }
   }
-  
+}
+
+
+
+// MARK: - Helpers
+
+extension ItemsScreen {
   private func getOffset() -> CGSize {
     
     let screenWidth = UIScreen.main.bounds.width / 2
