@@ -4,6 +4,10 @@ struct IndicatorsScreen: View {
   
   @State private var searchQuery: String = ""
   
+  @State private var offset: CGFloat      = 0
+  @State private var startOffset: CGFloat = 0
+  @State private var titleOffset: CGFloat = 0
+  
   var items: [[String: String]] = [
     ["name": "Нефтепродукты", "detail": "Питьевая воды"]
   ]
@@ -13,8 +17,8 @@ struct IndicatorsScreen: View {
     VStack {
       VStack {
         
-//        HStack {
-//
+        HStack {
+          
 //          Button {
 //
 //          } label: {
@@ -22,18 +26,18 @@ struct IndicatorsScreen: View {
 //              .font(.title2)
 //              .foregroundColor(.primary)
 //          }
-//
-//          Spacer()
-//
-//          Button {
-//
-//          } label: {
-//            Image(systemName: "plus")
-//              .font(.title2)
-//              .foregroundColor(.primary)
-//          }
-//        }
-//        .padding()
+          
+          Spacer()
+          
+          Button {
+            
+          } label: {
+            Image(systemName: "questionmark.circle")
+              .font(.title2)
+              .foregroundColor(.primary)
+          }
+        }
+        .padding()
         
         HStack {
           
@@ -48,10 +52,28 @@ struct IndicatorsScreen: View {
             
           }
           .font(.largeTitle)
+          .overlay(
+            
+            GeometryReader { reader -> Color in
+              
+              let width = reader.frame(in: .global).maxX
+              
+              DispatchQueue.main.async {
+                
+                if titleOffset == 0 {
+                  titleOffset = width
+                }
+              }
+              
+              return .clear
+            }.frame(width: 0, height: 0)
+          )
+          .padding()
+          .offset(getOffset())
           
           Spacer()
         }
-        .padding()
+        
         
         HStack(spacing: 15) {
           
@@ -89,7 +111,40 @@ struct IndicatorsScreen: View {
             IndicatorItemView(item: item)
           }
         }
+        .padding(.top, 10)
+        .overlay(
+          
+          GeometryReader { reader -> Color in
+            
+            let minY = reader.frame(in: .global).minY
+            
+            DispatchQueue.main.async {
+              
+              if startOffset == 0 {
+                startOffset = minY
+              }
+              
+              offset = startOffset - minY
+              
+              print(offset)
+            }
+            
+            return .clear
+          }
+        )
       }
     }
+  }
+  
+  private func getOffset() -> CGSize {
+    
+    let screenWidth = UIScreen.main.bounds.width / 2
+    
+    var size: CGSize = .zero
+    
+    size.width  = offset > 0 ? (offset * 1.5 <= (screenWidth - titleOffset) ? offset * 1.5 : (screenWidth - titleOffset)) : 0
+    size.height = offset > 0 ? (offset <= 75 ? -offset : -75) : 0
+    
+    return size
   }
 }
