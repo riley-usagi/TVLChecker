@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF123A842729CDE400E598BE /* IndicatorItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF123A832729CDE400E598BE /* IndicatorItemView.swift */; };
+		BF123A842729CDE400E598BE /* IndicatorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF123A832729CDE400E598BE /* IndicatorListView.swift */; };
 		BF99B512272A851100242D60 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF99B511272A851100242D60 /* FirebaseFirestore */; };
 		BF99B52A272A893C00242D60 /* HTTPCodesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B519272A893B00242D60 /* HTTPCodesExtension.swift */; };
 		BF99B52B272A893C00242D60 /* ResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B51A272A893B00242D60 /* ResultExtension.swift */; };
@@ -25,7 +25,7 @@
 		BF99B538272A893C00242D60 /* ErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B527272A893C00242D60 /* ErrorExtension.swift */; };
 		BF99B539272A893C00242D60 /* JustExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B528272A893C00242D60 /* JustExtension.swift */; };
 		BF99B53A272A893C00242D60 /* NSSetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B529272A893C00242D60 /* NSSetExtension.swift */; };
-		BF99B542272A896F00242D60 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B53D272A896F00242D60 /* WebServices.swift */; };
+		BF99B542272A896F00242D60 /* FBServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B53D272A896F00242D60 /* FBServices.swift */; };
 		BF99B543272A896F00242D60 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B53E272A896F00242D60 /* Container.swift */; };
 		BF99B544272A896F00242D60 /* Interactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B53F272A896F00242D60 /* Interactors.swift */; };
 		BF99B545272A896F00242D60 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B540272A896F00242D60 /* AppState.swift */; };
@@ -41,10 +41,9 @@
 		BF99B560272A8BCA00242D60 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B55F272A8BCA00242D60 /* AppEnvironment.swift */; };
 		BF99B563272A8C1B00242D60 /* IndicatorsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B562272A8C1B00242D60 /* IndicatorsInteractor.swift */; };
 		BF99B565272A8CBF00242D60 /* EnvInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B564272A8CBF00242D60 /* EnvInteractors.swift */; };
-		BF99B568272A924600242D60 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B567272A924600242D60 /* LoadingScreen.swift */; };
 		BF99B56B272A926900242D60 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B56A272A926900242D60 /* ActivityIndicatorView.swift */; };
 		BF99B56D272A939F00242D60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF99B56C272A939F00242D60 /* GoogleService-Info.plist */; };
-		BF99B570272A9A1E00242D60 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B56F272A9A1E00242D60 /* Indicator.swift */; };
+		BF99B570272A9A1E00242D60 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B56F272A9A1E00242D60 /* Item.swift */; };
 		BF99B574272A9A8000242D60 /* TVLCheckerDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF99B572272A9A8000242D60 /* TVLCheckerDataBase.xcdatamodeld */; };
 		BF99B577272A9C0100242D60 /* ItemModelObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B575272A9C0100242D60 /* ItemModelObject+CoreDataClass.swift */; };
 		BF99B578272A9C0100242D60 /* ItemModelObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B576272A9C0100242D60 /* ItemModelObject+CoreDataProperties.swift */; };
@@ -52,6 +51,9 @@
 		BF99B57E272AA02700242D60 /* EnvDBServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B57D272AA02700242D60 /* EnvDBServices.swift */; };
 		BF99B580272AA08C00242D60 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B57F272AA08C00242D60 /* CoreDataStack.swift */; };
 		BF99B584272AA13400242D60 /* DBServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B583272AA13400242D60 /* DBServices.swift */; };
+		BF99B587272AA65600242D60 /* ItemsFBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B586272AA65600242D60 /* ItemsFBService.swift */; };
+		BF99B589272AA6BF00242D60 /* EnvFBServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B588272AA6BF00242D60 /* EnvFBServices.swift */; };
+		BF99B58B272AAF3E00242D60 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B58A272AAF3E00242D60 /* ArrayExtension.swift */; };
 		BFD9466B2729AC8700D3E6B3 /* IndicatorsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD9466A2729AC8700D3E6B3 /* IndicatorsScreen.swift */; };
 		BFE0E1152727CB77009FC108 /* TVLCheckerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */; };
 		BFE0E1172727CB77009FC108 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0E1162727CB77009FC108 /* ContentView.swift */; };
@@ -60,7 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BF123A832729CDE400E598BE /* IndicatorItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorItemView.swift; sourceTree = "<group>"; };
+		BF123A832729CDE400E598BE /* IndicatorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorListView.swift; sourceTree = "<group>"; };
 		BF99B516272A85F100242D60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF99B519272A893B00242D60 /* HTTPCodesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPCodesExtension.swift; sourceTree = "<group>"; };
 		BF99B51A272A893B00242D60 /* ResultExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultExtension.swift; sourceTree = "<group>"; };
@@ -78,7 +80,7 @@
 		BF99B527272A893C00242D60 /* ErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorExtension.swift; sourceTree = "<group>"; };
 		BF99B528272A893C00242D60 /* JustExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustExtension.swift; sourceTree = "<group>"; };
 		BF99B529272A893C00242D60 /* NSSetExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSetExtension.swift; sourceTree = "<group>"; };
-		BF99B53D272A896F00242D60 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		BF99B53D272A896F00242D60 /* FBServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBServices.swift; sourceTree = "<group>"; };
 		BF99B53E272A896F00242D60 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		BF99B53F272A896F00242D60 /* Interactors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactors.swift; sourceTree = "<group>"; };
 		BF99B540272A896F00242D60 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -94,10 +96,9 @@
 		BF99B55F272A8BCA00242D60 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		BF99B562272A8C1B00242D60 /* IndicatorsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsInteractor.swift; sourceTree = "<group>"; };
 		BF99B564272A8CBF00242D60 /* EnvInteractors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvInteractors.swift; sourceTree = "<group>"; };
-		BF99B567272A924600242D60 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		BF99B56A272A926900242D60 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		BF99B56C272A939F00242D60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BF99B56F272A9A1E00242D60 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
+		BF99B56F272A9A1E00242D60 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BF99B573272A9A8000242D60 /* TVLCheckerDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVLCheckerDataBase.xcdatamodel; sourceTree = "<group>"; };
 		BF99B575272A9C0100242D60 /* ItemModelObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemModelObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BF99B576272A9C0100242D60 /* ItemModelObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemModelObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -105,6 +106,9 @@
 		BF99B57D272AA02700242D60 /* EnvDBServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvDBServices.swift; sourceTree = "<group>"; };
 		BF99B57F272AA08C00242D60 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		BF99B583272AA13400242D60 /* DBServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBServices.swift; sourceTree = "<group>"; };
+		BF99B586272AA65600242D60 /* ItemsFBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsFBService.swift; sourceTree = "<group>"; };
+		BF99B588272AA6BF00242D60 /* EnvFBServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvFBServices.swift; sourceTree = "<group>"; };
+		BF99B58A272AAF3E00242D60 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		BFD9466A2729AC8700D3E6B3 /* IndicatorsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsScreen.swift; sourceTree = "<group>"; };
 		BFE0E1112727CB77009FC108 /* TVLChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVLChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVLCheckerApp.swift; sourceTree = "<group>"; };
@@ -128,7 +132,7 @@
 		BF123A822729CDD400E598BE /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				BF123A832729CDE400E598BE /* IndicatorItemView.swift */,
+				BF123A832729CDE400E598BE /* IndicatorListView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -162,6 +166,7 @@
 				BF99B51C272A893B00242D60 /* SubscribersCompletionExtension.swift */,
 				BF99B525272A893C00242D60 /* UINavigationControllerExtension.swift */,
 				BF99B51D272A893B00242D60 /* ViewExtension.swift */,
+				BF99B58A272AAF3E00242D60 /* ArrayExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,9 +176,9 @@
 			children = (
 				BF99B540272A896F00242D60 /* AppState.swift */,
 				BF99B53E272A896F00242D60 /* Container.swift */,
-				BF99B53F272A896F00242D60 /* Interactors.swift */,
-				BF99B53D272A896F00242D60 /* WebServices.swift */,
 				BF99B583272AA13400242D60 /* DBServices.swift */,
+				BF99B53F272A896F00242D60 /* Interactors.swift */,
+				BF99B53D272A896F00242D60 /* FBServices.swift */,
 			);
 			path = Injected;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 			children = (
 				BF99B564272A8CBF00242D60 /* EnvInteractors.swift */,
 				BF99B57D272AA02700242D60 /* EnvDBServices.swift */,
+				BF99B588272AA6BF00242D60 /* EnvFBServices.swift */,
 			);
 			path = EnvExtensions;
 			sourceTree = "<group>";
@@ -242,14 +248,6 @@
 				BF99B562272A8C1B00242D60 /* IndicatorsInteractor.swift */,
 			);
 			path = Interactors;
-			sourceTree = "<group>";
-		};
-		BF99B566272A923900242D60 /* Loading */ = {
-			isa = PBXGroup;
-			children = (
-				BF99B567272A924600242D60 /* LoadingScreen.swift */,
-			);
-			path = Loading;
 			sourceTree = "<group>";
 		};
 		BF99B569272A925600242D60 /* Other */ = {
@@ -263,7 +261,7 @@
 		BF99B56E272A9A1200242D60 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BF99B56F272A9A1E00242D60 /* Indicator.swift */,
+				BF99B56F272A9A1E00242D60 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				BF99B57C272A9FDF00242D60 /* CoreData */,
+				BF99B585272AA63000242D60 /* FireBase */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -295,11 +294,18 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		BF99B585272AA63000242D60 /* FireBase */ = {
+			isa = PBXGroup;
+			children = (
+				BF99B586272AA65600242D60 /* ItemsFBService.swift */,
+			);
+			path = FireBase;
+			sourceTree = "<group>";
+		};
 		BFD946682729AC3A00D3E6B3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				BF99B569272A925600242D60 /* Other */,
-				BF99B566272A923900242D60 /* Loading */,
 				BFE0E1162727CB77009FC108 /* ContentView.swift */,
 				BFD946692729AC6900D3E6B3 /* Indicators */,
 			);
@@ -459,7 +465,7 @@
 				BF99B560272A8BCA00242D60 /* AppEnvironment.swift in Sources */,
 				BF99B533272A893C00242D60 /* ManagedEntityExtension.swift in Sources */,
 				BF99B552272A8A6600242D60 /* CancelBag.swift in Sources */,
-				BF99B542272A896F00242D60 /* WebServices.swift in Sources */,
+				BF99B542272A896F00242D60 /* FBServices.swift in Sources */,
 				BF99B539272A893C00242D60 /* JustExtension.swift in Sources */,
 				BF99B54E272A8A6600242D60 /* Store.swift in Sources */,
 				BF99B52E272A893C00242D60 /* ViewExtension.swift in Sources */,
@@ -472,13 +478,13 @@
 				BF99B578272A9C0100242D60 /* ItemModelObject+CoreDataProperties.swift in Sources */,
 				BF99B52A272A893C00242D60 /* HTTPCodesExtension.swift in Sources */,
 				BF99B57B272A9F6700242D60 /* IndicatorsDBService.swift in Sources */,
-				BF99B570272A9A1E00242D60 /* Indicator.swift in Sources */,
+				BF99B570272A9A1E00242D60 /* Item.swift in Sources */,
 				BF99B537272A893C00242D60 /* NSManagedObjectContextExtension.swift in Sources */,
-				BF123A842729CDE400E598BE /* IndicatorItemView.swift in Sources */,
+				BF99B58B272AAF3E00242D60 /* ArrayExtension.swift in Sources */,
+				BF123A842729CDE400E598BE /* IndicatorListView.swift in Sources */,
 				BF99B55D272A8AD900242D60 /* APIError.swift in Sources */,
 				BF99B538272A893C00242D60 /* ErrorExtension.swift in Sources */,
 				BF99B544272A896F00242D60 /* Interactors.swift in Sources */,
-				BF99B568272A924600242D60 /* LoadingScreen.swift in Sources */,
 				BF99B531272A893C00242D60 /* IntExtension.swift in Sources */,
 				BF99B543272A896F00242D60 /* Container.swift in Sources */,
 				BF99B534272A893C00242D60 /* ProcessInfoExtension.swift in Sources */,
@@ -487,9 +493,11 @@
 				BF99B56B272A926900242D60 /* ActivityIndicatorView.swift in Sources */,
 				BF99B584272AA13400242D60 /* DBServices.swift in Sources */,
 				BF99B57E272AA02700242D60 /* EnvDBServices.swift in Sources */,
+				BF99B587272AA65600242D60 /* ItemsFBService.swift in Sources */,
 				BF99B580272AA08C00242D60 /* CoreDataStack.swift in Sources */,
 				BF99B55A272A8A8E00242D60 /* LazyList.swift in Sources */,
 				BF99B52D272A893C00242D60 /* SubscribersCompletionExtension.swift in Sources */,
+				BF99B589272AA6BF00242D60 /* EnvFBServices.swift in Sources */,
 				BF99B52F272A893C00242D60 /* AnyCancellableExtension.swift in Sources */,
 				BF99B557272A8A8300242D60 /* LazyListIterator.swift in Sources */,
 				BF99B558272A8A8300242D60 /* LazyListCache.swift in Sources */,

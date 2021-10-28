@@ -15,9 +15,9 @@ extension AppEnvironment {
     
     let dbServices = configuredDBServices()
     
-    let interactors = configuredInteractors(
-      appState: appState, dbServices: dbServices
-    )
+    let fbServices = configuredFBServices()
+    
+    let interactors = configuredInteractors(appState, dbServices, fbServices)
     
     let container = Container(appState: appState, interactors: interactors)
     

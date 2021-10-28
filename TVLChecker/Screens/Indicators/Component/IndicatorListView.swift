@@ -1,8 +1,12 @@
 import SwiftUI
 
-struct IndicatorItemView: View {
+struct IndicatorListView: View {
   
-  var item: [String: String]
+  var indicator: String
+  
+  init(_ indicator: String) {
+    self.indicator = indicator
+  }
   
   var body: some View {
     
@@ -10,12 +14,12 @@ struct IndicatorItemView: View {
       
       VStack(alignment: .leading, spacing: 8) {
         
-        Text(item["name"] ?? "Some name")
+        Text(indicator)
           .fontWeight(.bold)
         
-        Text(item["detail"] ?? "Some name")
-          .font(.caption)
-          .foregroundColor(.gray)
+//        Text(item["detail"] ?? "Some name")
+//          .font(.caption)
+//          .foregroundColor(.gray)
       }
       .frame(maxWidth: .infinity, alignment: .leading)
       

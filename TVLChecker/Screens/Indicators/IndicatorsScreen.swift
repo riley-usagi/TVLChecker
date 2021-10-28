@@ -15,10 +15,6 @@ struct IndicatorsScreen: View {
   @State private var titleOffset: CGFloat     = 0
   @State private var titleBarHeight: CGFloat  = 0
   
-  var items: [[String: String]] = [
-    ["name": "Нефтепродукты", "detail": "Питьевая воды"]
-  ]
-  
   init(indicatorsList: Loadable<[String]> = .notRequested) {
     self._indicatorsList = .init(initialValue: indicatorsList)
   }
@@ -208,8 +204,8 @@ private extension IndicatorsScreen {
         
         VStack(spacing: 15) {
           
-          ForEach(items, id: \.self) { item in
-            IndicatorItemView(item: item)
+          ForEach(indicators, id: \.self) { indicator in
+            IndicatorListView(indicator)
           }
         }
         .padding(.top, 10)

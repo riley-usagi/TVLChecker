@@ -5,14 +5,14 @@ extension AppEnvironment {
   /// - Parameter appState: Объект хранилища данных
   /// - Returns: Список настроенных Интеракторов
   static func configuredInteractors(
-    appState: Store<AppState>,
-    dbServices: Container.DBServices
-//    fbRepositories: Container.FBRepositories,
-//    dbRepositories: Container.DBRepositories
+    _ appState: Store<AppState>,
+    _ dbServices: Container.DBServices,
+    _ fbServices: Container.FBServices
   ) -> Container.Interactors {
     
     let indicatorsInteractor = RealIndicatorsInteractor(
-      dbService: dbServices.indicatorsDBService
+      dbService: dbServices.indicatorsDBService,
+      fbService: fbServices.itemsFBService
     )
     
     

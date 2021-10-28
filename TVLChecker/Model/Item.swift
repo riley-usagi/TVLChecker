@@ -2,7 +2,7 @@ import CoreData
 import SwiftUI
 
 /// Объект модели - Item
-struct Indicator: Identifiable, Equatable {
+struct Item: Identifiable, Equatable {
   
   
   // MARK: - Variables
@@ -15,7 +15,7 @@ struct Indicator: Identifiable, Equatable {
 }
 
 
-extension Indicator {
+extension Item {
   
   init?(managedObject: ItemModelObject) {
     

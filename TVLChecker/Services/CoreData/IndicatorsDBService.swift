@@ -2,7 +2,11 @@ import Combine
 import CoreData
 
 protocol IndicatorsDBService {
+  func hasLoadedItems() -> AnyPublisher<Bool, Error>
   
+  func saveDataToCoreData(items: [Item]) -> AnyPublisher<Void, Error>
+  
+  func indicators(searchText: String) -> AnyPublisher<[String], Error>
 }
 
 
@@ -11,6 +15,44 @@ struct RealIndicatorsDBService: IndicatorsDBService {
   
   init(_ persistentStore: PersistentStore) {
     self.persistentStore = persistentStore
+  }
+  
+  func hasLoadedItems() -> AnyPublisher<Bool, Error> {
+    let fetchRequest = ItemModelObject.justOneItem()
+    
+    return persistentStore
+      .count(fetchRequest)
+      .map { $0 > 0 }
+      .eraseToAnyPublisher()
+  }
+  
+  func saveDataToCoreData(items: [Item]) -> AnyPublisher<Void, Error> {
+    return persistentStore
+      .update { context in
+        items.forEach {
+          $0.modelToObjectWithin(context)
+        }
+      }
+  }
+  
+  func indicators(searchText: String) -> AnyPublisher<[String], Error> {
+    
+    let fetchRequest = ItemModelObject.itemsList(searchText: searchText)
+    
+    return persistentStore
+      .fetch(fetchRequest) { fetchedIndicators in
+        Item(managedObject: fetchedIndicators)
+      }
+      .map { items in
+        var uniquedIndicatorsList: [String] = []
+        
+        for item in items {
+          uniquedIndicatorsList.append(item.indicator)
+        }
+        
+        return uniquedIndicatorsList.uniqued()
+      }
+      .eraseToAnyPublisher()
   }
 }
 
