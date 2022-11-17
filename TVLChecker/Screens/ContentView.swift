@@ -8,20 +8,40 @@ struct ContentView: View {
   
   @State private var filteredItems: [ItemModel] = []
   
+  @State private var selectedItem: ItemModel    = ItemModel.stub
+  
+  @State private var sheetStatus: Bool          = false
+  
   var body: some View {
     
     NavigationStack {
       List {
         ForEach(filteredItems) { item in
-          Text(item.indicator).font(.largeTitle)
+          HStack {
+            Text(item.indicator).font(.title)
+            Spacer()
+          }
+          
+          .contentShape(Rectangle())
+          
+          .onTapGesture {
+            self.selectedItem = item
+            self.sheetStatus.toggle()
+          }
         }
       }
       
       .listStyle(.plain)
       
       .navigationTitle("TVL Checker")
+      
     }
     .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+    
+    .sheet(isPresented: $sheetStatus) {
+      DocComponent($selectedItem)
+        .presentationDetents([.fraction(0.5)])
+    }
     
     .onAppear {
       Task {

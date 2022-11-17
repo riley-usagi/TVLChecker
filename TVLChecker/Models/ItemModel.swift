@@ -39,3 +39,9 @@ extension ItemModel {
     }
   }
 }
+
+extension ItemModel {
+  static var stub: ItemModel = ItemModel(
+    indicator: "stub", obj: "stub", doc: "stub", val: "stub"
+  )
+}
