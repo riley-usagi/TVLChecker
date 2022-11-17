@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF6FCC5B292690F90082FB15 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FCC5A292690F90082FB15 /* ItemModel.swift */; };
+		BF6FCC5E29269A3D0082FB15 /* FireBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FCC5D29269A3D0082FB15 /* FireBaseError.swift */; };
 		BF99B512272A851100242D60 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF99B511272A851100242D60 /* FirebaseFirestore */; };
 		BF99B56D272A939F00242D60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF99B56C272A939F00242D60 /* GoogleService-Info.plist */; };
 		BFE0E1152727CB77009FC108 /* TVLCheckerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		BF6FCC5A292690F90082FB15 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		BF6FCC5D29269A3D0082FB15 /* FireBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseError.swift; sourceTree = "<group>"; };
 		BF99B56C272A939F00242D60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFE0E1112727CB77009FC108 /* TVLChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVLChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVLCheckerApp.swift; sourceTree = "<group>"; };
@@ -44,6 +46,14 @@
 				BF6FCC5A292690F90082FB15 /* ItemModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BF6FCC5C29269A280082FB15 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				BF6FCC5D29269A3D0082FB15 /* FireBaseError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		BF99B515272A85DF00242D60 /* Resources */ = {
@@ -91,6 +101,7 @@
 		BFE0E1132727CB77009FC108 /* TVLChecker */ = {
 			isa = PBXGroup;
 			children = (
+				BF6FCC5C29269A280082FB15 /* Errors */,
 				BF6FCC59292690850082FB15 /* Models */,
 				BF99B515272A85DF00242D60 /* Resources */,
 				BFD946682729AC3A00D3E6B3 /* Screens */,
@@ -208,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6FCC5B292690F90082FB15 /* ItemModel.swift in Sources */,
+				BF6FCC5E29269A3D0082FB15 /* FireBaseError.swift in Sources */,
 				BFE0E1172727CB77009FC108 /* ContentView.swift in Sources */,
 				BFE0E1152727CB77009FC108 /* TVLCheckerApp.swift in Sources */,
 			);

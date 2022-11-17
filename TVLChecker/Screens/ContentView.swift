@@ -4,37 +4,38 @@ struct ContentView: View {
   
   @State private var searchText: String = ""
   
-  @State private var receivedItems: [ItemModel] = [
-    ItemModel(indicator: "FirstIndicator", obj: "FirstObject", doc: "FirstDoc", val: "FirstVal"),
-    ItemModel(indicator: "SecondIndicator", obj: "SecondObject", doc: "SecondDoc", val: "SecondVal")
-  ]
+  @State private var receivedItems: [ItemModel] = []
   
-  @State private var items: [ItemModel] = []
+  @State private var filteredItems: [ItemModel] = []
   
   var body: some View {
     
     NavigationStack {
       List {
-        ForEach(items) { item in
+        ForEach(filteredItems) { item in
           Text(item.indicator).font(.largeTitle)
         }
       }
-      .listStyle(.plain)
-      .navigationTitle("TVL Checker")
       
+      .listStyle(.plain)
+      
+      .navigationTitle("TVL Checker")
     }
     .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
     
     .onAppear {
-      self.items = self.receivedItems
+      Task {
+        self.receivedItems = try await ItemModel.receivedItems()
+        self.filteredItems = self.receivedItems
+      }
     }
     
     .onChange(of: searchText) { searchText in
       
       if !searchText.isEmpty {
-        self.items = receivedItems.filter { $0.indicator.contains(searchText) }
+        self.filteredItems = receivedItems.filter { $0.indicator.contains(searchText) }
       } else {
-        self.items = receivedItems
+        self.filteredItems = receivedItems
       }
     }
   }
