@@ -14,28 +14,42 @@ struct ContentView: View {
   
   var body: some View {
     
-    NavigationStack {
-      List {
-        ForEach(filteredItems) { item in
-          HStack {
-            Text(item.indicator).font(.title)
-            Spacer()
+    List {
+      ForEach(filteredItems) { item in
+        
+        HStack {
+          
+          VStack {
+            HStack {
+              Text(item.indicator)
+              Spacer()
+            }
+            
+            HStack {
+              Text(item.obj)
+              Spacer()
+            }
           }
           
-          .contentShape(Rectangle())
+          Spacer()
           
-          .onTapGesture {
-            self.selectedItem = item
-            self.sheetStatus.toggle()
-          }
+          Text(item.val)
+        }
+        
+        
+        .contentShape(Rectangle())
+        
+        .onTapGesture {
+          self.selectedItem = item
+          self.sheetStatus.toggle()
         }
       }
-      
-      .listStyle(.plain)
-      
-      .navigationTitle("TVL Checker")
-      
     }
+    
+    .listStyle(.plain)
+    
+    .navigationTitle("TVL Checker")
+    
     .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
     
     .sheet(isPresented: $sheetStatus) {
@@ -53,7 +67,10 @@ struct ContentView: View {
     .onChange(of: searchText) { searchText in
       
       if !searchText.isEmpty {
-        self.filteredItems = receivedItems.filter { $0.indicator.contains(searchText) }
+        self.filteredItems =
+        receivedItems
+          .filter { $0.indicator.contains(searchText) }
+          .sorted { $0.indicator < $1.indicator }
       } else {
         self.filteredItems = receivedItems
       }
