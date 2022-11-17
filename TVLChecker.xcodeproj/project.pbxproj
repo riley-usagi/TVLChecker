@@ -10,6 +10,7 @@
 		BF6FCC5B292690F90082FB15 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FCC5A292690F90082FB15 /* ItemModel.swift */; };
 		BF6FCC5E29269A3D0082FB15 /* FireBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FCC5D29269A3D0082FB15 /* FireBaseError.swift */; };
 		BF6FCC6229269F1A0082FB15 /* DocComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FCC6129269F1A0082FB15 /* DocComponent.swift */; };
+		BF6FCC652926AB670082FB15 /* AiDesign in Frameworks */ = {isa = PBXBuildFile; productRef = BF6FCC642926AB670082FB15 /* AiDesign */; };
 		BF99B512272A851100242D60 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF99B511272A851100242D60 /* FirebaseFirestore */; };
 		BF99B56D272A939F00242D60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF99B56C272A939F00242D60 /* GoogleService-Info.plist */; };
 		BFE0E1152727CB77009FC108 /* TVLCheckerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0E1142727CB77009FC108 /* TVLCheckerApp.swift */; };
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6FCC652926AB670082FB15 /* AiDesign in Frameworks */,
 				BF99B512272A851100242D60 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +143,7 @@
 			name = TVLChecker;
 			packageProductDependencies = (
 				BF99B511272A851100242D60 /* FirebaseFirestore */,
+				BF6FCC642926AB670082FB15 /* AiDesign */,
 			);
 			productName = TVLChecker;
 			productReference = BFE0E1112727CB77009FC108 /* TVLChecker.app */;
@@ -172,6 +175,7 @@
 			mainGroup = BFE0E1082727CB76009FC108;
 			packageReferences = (
 				BF99B510272A851100242D60 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BF6FCC632926AB670082FB15 /* XCRemoteSwiftPackageReference "AiDesign" */,
 			);
 			productRefGroup = BFE0E1122727CB77009FC108 /* Products */;
 			projectDirPath = "";
@@ -444,6 +448,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BF6FCC632926AB670082FB15 /* XCRemoteSwiftPackageReference "AiDesign" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:riley-usagi/AiDesign.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		BF99B510272A851100242D60 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -455,6 +467,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BF6FCC642926AB670082FB15 /* AiDesign */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF6FCC632926AB670082FB15 /* XCRemoteSwiftPackageReference "AiDesign" */;
+			productName = AiDesign;
+		};
 		BF99B511272A851100242D60 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF99B510272A851100242D60 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

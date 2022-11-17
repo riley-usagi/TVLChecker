@@ -1,60 +1,73 @@
+import AiDesign
 import SwiftUI
 
+/// Главный экран
 struct ContentView: View {
   
-  @State private var searchText: String = ""
+  /// Поисковый запрос
+  @State private var searchText: String         = ""
   
+  /// Список полученных показателей
   @State private var receivedItems: [ItemModel] = []
   
+  /// Отфильтрованные при помощи поиска результаты
   @State private var filteredItems: [ItemModel] = []
   
+  /// Выбранный показатель для всплывашки
   @State private var selectedItem: ItemModel    = ItemModel.stub
   
+  /// Статус отображения всплывашки
   @State private var sheetStatus: Bool          = false
   
   var body: some View {
     
-    List {
-      ForEach(filteredItems) { item in
+    NavigationStack {
+      
+      List {
         
-        HStack {
+        ForEach(filteredItems) { item in
           
-          VStack {
-            HStack {
-              Text(item.indicator)
-              Spacer()
+          HStack {
+            
+            VStack {
+              HStack {
+                Text(item.indicator)
+                  .typography(.h2Bold, .aiBlack)
+                Spacer()
+              }
+              
+              HStack {
+                Text(item.obj.capitalized)
+                  .typography(.h3Regular, .aiCyan60)
+                Spacer()
+              }
             }
             
-            HStack {
-              Text(item.obj)
-              Spacer()
-            }
+            Spacer()
+            
+            Text(item.val)
+              .typography(.h3Regular, .aiPurple80)
           }
           
-          Spacer()
+          .contentShape(Rectangle())
           
-          Text(item.val)
-        }
-        
-        
-        .contentShape(Rectangle())
-        
-        .onTapGesture {
-          self.selectedItem = item
-          self.sheetStatus.toggle()
+          .onTapGesture {
+            self.selectedItem = item
+            self.sheetStatus.toggle()
+          }
         }
       }
+      
+      .listStyle(.plain)
+      
+      .navigationTitle("TVL Checker")
+      
     }
-    
-    .listStyle(.plain)
-    
-    .navigationTitle("TVL Checker")
-    
     .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
     
     .sheet(isPresented: $sheetStatus) {
       DocComponent($selectedItem)
-        .presentationDetents([.fraction(0.5)])
+        .presentationDetents([.fraction(0.3)])
     }
     
     .onAppear {
